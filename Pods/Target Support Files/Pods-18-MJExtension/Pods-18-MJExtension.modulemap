@@ -1,0 +1,6 @@
+framework module Pods_18_MJExtension {
+  umbrella header "Pods-18-MJExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
