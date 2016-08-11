@@ -11,6 +11,8 @@
 		6622E20C1D5C707F004F76C5 /* HE_Dict2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6622E2091D5C707F004F76C5 /* HE_Dict2Model.swift */; };
 		6622E20D1D5C707F004F76C5 /* HE_Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6622E20A1D5C707F004F76C5 /* HE_Foundation.swift */; };
 		6622E20E1D5C707F004F76C5 /* HE_Model2Dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6622E20B1D5C707F004F76C5 /* HE_Model2Dict.swift */; };
+		6622E2111D5C844B004F76C5 /* 首页焦点按钮 in Resources */ = {isa = PBXBuildFile; fileRef = 6622E2101D5C844B004F76C5 /* 首页焦点按钮 */; };
+		6622E2131D5C84E1004F76C5 /* HeadResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6622E2121D5C84E1004F76C5 /* HeadResources.swift */; };
 		66A21A881D4B2FA40097B121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A21A871D4B2FA40097B121 /* AppDelegate.swift */; };
 		66A21A8A1D4B2FA40097B121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A21A891D4B2FA40097B121 /* ViewController.swift */; };
 		66A21A8D1D4B2FA40097B121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A21A8B1D4B2FA40097B121 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		6622E2091D5C707F004F76C5 /* HE_Dict2Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HE_Dict2Model.swift; sourceTree = "<group>"; };
 		6622E20A1D5C707F004F76C5 /* HE_Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HE_Foundation.swift; sourceTree = "<group>"; };
 		6622E20B1D5C707F004F76C5 /* HE_Model2Dict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HE_Model2Dict.swift; sourceTree = "<group>"; };
+		6622E2101D5C844B004F76C5 /* 首页焦点按钮 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "首页焦点按钮"; sourceTree = "<group>"; };
+		6622E2121D5C84E1004F76C5 /* HeadResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadResources.swift; sourceTree = "<group>"; };
 		66A21A841D4B2FA40097B121 /* 18-MJExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "18-MJExtension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A21A871D4B2FA40097B121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66A21A891D4B2FA40097B121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 			path = HEExention;
 			sourceTree = "<group>";
 		};
+		6622E20F1D5C8332004F76C5 /* DSDict2Model */ = {
+			isa = PBXGroup;
+			children = (
+				6622E2061D5C6413004F76C5 /* DSDict2Model.swift */,
+			);
+			name = DSDict2Model;
+			sourceTree = "<group>";
+		};
 		66A21A7B1D4B2FA40097B121 = {
 			isa = PBXGroup;
 			children = (
@@ -167,13 +179,15 @@
 			children = (
 				66A21A871D4B2FA40097B121 /* AppDelegate.swift */,
 				66A21A891D4B2FA40097B121 /* ViewController.swift */,
-				6622E2061D5C6413004F76C5 /* DSDict2Model.swift */,
+				6622E2121D5C84E1004F76C5 /* HeadResources.swift */,
+				6622E20F1D5C8332004F76C5 /* DSDict2Model */,
 				6622E2081D5C707F004F76C5 /* HEExention */,
 				66A21AB51D4B32490097B121 /* Model */,
 				66A21A8B1D4B2FA40097B121 /* Main.storyboard */,
 				66A21A8E1D4B2FA40097B121 /* Assets.xcassets */,
 				66A21A901D4B2FA40097B121 /* LaunchScreen.storyboard */,
 				66A21A931D4B2FA40097B121 /* Info.plist */,
+				6622E2101D5C844B004F76C5 /* 首页焦点按钮 */,
 			);
 			path = "18-MJExtension";
 			sourceTree = "<group>";
@@ -338,6 +352,7 @@
 				66A21A921D4B2FA40097B121 /* LaunchScreen.storyboard in Resources */,
 				66A21A8F1D4B2FA40097B121 /* Assets.xcassets in Resources */,
 				66A21A8D1D4B2FA40097B121 /* Main.storyboard in Resources */,
+				6622E2111D5C844B004F76C5 /* 首页焦点按钮 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +511,7 @@
 				66A21AE21D4B36460097B121 /* DSDogModel.swift in Sources */,
 				66A21AEA1D4B38CD0097B121 /* DSStudentModel.swift in Sources */,
 				66A21A881D4B2FA40097B121 /* AppDelegate.swift in Sources */,
+				6622E2131D5C84E1004F76C5 /* HeadResources.swift in Sources */,
 				66A21AE61D4B36AA0097B121 /* DSUserModel.swift in Sources */,
 				66A21ADE1D4B35790097B121 /* DSBookModel.swift in Sources */,
 				66A21AE41D4B36800097B121 /* DSStatusModel.swift in Sources */,

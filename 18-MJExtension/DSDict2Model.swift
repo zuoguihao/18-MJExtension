@@ -117,7 +117,7 @@ extension NSObject {
     
     ///  通过plist来创建一个模型 @param filename 文件名(仅限于mainBundle中的文件)  @return 模型数组
     
-    class func objectWithFileName(filename:String)->Self{
+    class func ds_objectWithFileName(filename:String)->Self{
         
         let filePath = NSBundle.mainBundle().pathForResource(filename, ofType: nil)
         

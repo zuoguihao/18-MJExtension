@@ -106,7 +106,9 @@ class ViewController: UIViewController {
     
     /// 简单的字典 -> 模型（key替换，比如ID和id，支持多级映射）
     private func keyValues2object4() {
-        
+        HeadResources.loadData { (data, error) in
+            print(data)
+        }
     }
     
     /// 字典数组 -> 模型数组
@@ -154,7 +156,7 @@ class ViewController: UIViewController {
 //        keyValues2object()
 //        keyValues2object1()
 //        keyValues2object2()
-        keyValues2object3()
+//        keyValues2object3()
         keyValues2object4()
         keyValuesArray2objectArray()
         object2keyValues()

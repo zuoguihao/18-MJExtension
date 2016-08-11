@@ -24,9 +24,11 @@ import Foundation
 
 
 extension NSObject{
- 
+    
     //dict: 要进行转换的字典
-    class func he_objectWithKeyValues(dict: NSDictionary)->AnyObject?{
+    class func he_objectWithKeyValues(dict: NSDictionary!)->AnyObject?{
+        if dict == nil { return nil}
+        
         if HEFoundation.isClassFromFoundation(self) {
             print("只有自定义模型类才可以字典转模型")
             assert(true)
@@ -51,6 +53,7 @@ extension NSObject{
                 
                 var value:AnyObject! = dict[propertyKey]      //取得字典中的值
                 if value == nil {continue}
+                if value.isMemberOfClass(NSNull){ continue}
                 
                 let valueType =  "\(value.classForCoder)"     //字典中保存的值得类型
                 if valueType == "NSDictionary"{               //1，值是字典。 这个字典要对应一个自定义的模型类并且这个类不是Foundation中定义的类型。
@@ -72,10 +75,8 @@ extension NSObject{
                             }
                         }
                     }
-                    
                 }
-                
-              obj.setValue(value, forKey: propertyKey)
+                obj.setValue(value, forKey: propertyKey)
             }
             free(properties)                            //释放内存
             cls = cls.superclass()!                     //处理父类
@@ -113,6 +114,36 @@ extension NSObject{
         }else{
             return result
         }
+    }
+    
+    /** 从指定文件中获取字典或数组， 并转为模型*/
+    class func he_loadDataFromFile(path:String, completion:(data: AnyObject!, error: NSError!) -> Void) {
+        let data:NSData! = NSData(contentsOfFile: path)
+        if data == nil {
+            completion(data: nil, error: NSError(domain: "文件不存在", code: -1, userInfo: nil))
+            return
+        }
+        do{
+            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            if let dict = object as? NSDictionary{
+                if let model = he_objectWithKeyValues(dict){
+                    completion(data: model, error: nil)
+                }else{
+                    completion(data: nil, error: NSError(domain: "转换失败", code: -1, userInfo: nil))
+                }
+            }else if let array =  object as? NSArray{
+                if let model = he_objectArrayWithKeyValuesArray(array){
+                    completion(data: model, error: nil)
+                }else{
+                    completion(data: nil, error: NSError(domain: "转换失败", code: -1, userInfo: nil))
+                }
+            }else{
+                completion(data: nil, error: NSError(domain: "转换失败", code: -1, userInfo: nil))
+            }
+        }catch {
+            completion(data: nil, error: NSError(domain: "不能得到 JSONObject", code: -1, userInfo: nil))
+        }
+        
     }
 }
 
